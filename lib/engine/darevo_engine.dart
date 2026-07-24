@@ -1,5 +1,6 @@
 import '../models/room.dart';
 import 'activity_engine.dart';
+import 'player_engine.dart';
 
 class DarevoEngine {
   DarevoEngine._();
@@ -8,10 +9,10 @@ class DarevoEngine {
 
   Room? _currentRoom;
 
-  final ActivityEngine activityEngine =
-      ActivityEngine.instance;
+  final ActivityEngine activityEngine = ActivityEngine.instance;
+  final PlayerEngine playerEngine = PlayerEngine.instance;
 
-  String get version => "0.0.1 Pre-Alpha";
+  String get version => "0.0.2 Pre-Alpha";
 
   Room? get currentRoom => _currentRoom;
 
@@ -24,5 +25,6 @@ class DarevoEngine {
   void reset() {
     _currentRoom = null;
     activityEngine.clear();
+    playerEngine.clear();
   }
 }
