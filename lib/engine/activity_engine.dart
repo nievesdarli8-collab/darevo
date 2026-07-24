@@ -1,26 +1,36 @@
-/// ===========================================================
-/// ACTIVITY ENGINE
-/// Administra todas las actividades del juego.
-/// ===========================================================
+import '../data/activity_repository.dart';
+import '../models/activity.dart';
 
 class ActivityEngine {
   ActivityEngine._();
 
-  static final ActivityEngine instance = ActivityEngine._();
+  static final ActivityEngine instance =
+      ActivityEngine._();
 
-  final List<String> _activities = [];
+  final ActivityRepository repository =
+      ActivityRepository.instance;
 
-  void registerActivity(String activity) {
-    _activities.add(activity);
+  int _currentIndex = 0;
+
+  Activity? nextActivity() {
+    if (repository.activities.isEmpty) {
+      return null;
+    }
+
+    final activity =
+        repository.activities[_currentIndex];
+
+    _currentIndex++;
+
+    if (_currentIndex >=
+        repository.activities.length) {
+      _currentIndex = 0;
+    }
+
+    return activity;
   }
 
-  List<String> get activities =>
-      List.unmodifiable(_activities);
-
-  int get totalActivities =>
-      _activities.length;
-
-  void clear() {
-    _activities.clear();
+  void reset() {
+    _currentIndex = 0;
   }
 }
