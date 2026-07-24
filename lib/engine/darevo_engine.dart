@@ -3,6 +3,7 @@ import 'activity_engine.dart';
 import 'player_engine.dart';
 import 'game_state_engine.dart';
 import 'room_engine.dart';
+import 'game_flow_engine.dart';
 
 class DarevoEngine {
   DarevoEngine._();
@@ -14,7 +15,9 @@ class DarevoEngine {
   final ActivityEngine activityEngine = ActivityEngine.instance;
   final PlayerEngine playerEngine = PlayerEngine.instance;
   final GameStateEngine gameStateEngine = GameStateEngine.instance;
-final RoomEngine roomEngine = RoomEngine.instance;
+  final RoomEngine roomEngine = RoomEngine.instance;
+  final GameFlowEngine gameFlowEngine =
+    GameFlowEngine.instance;
 
   String get version => "0.0.5 Pre-Alpha";
 
@@ -32,4 +35,5 @@ final RoomEngine roomEngine = RoomEngine.instance;
   playerEngine.clear();
   roomEngine.clear();
   gameStateEngine.reset();
+  gameFlowEngine.reset();
 }
