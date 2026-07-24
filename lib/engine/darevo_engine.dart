@@ -1,6 +1,7 @@
 import '../models/room.dart';
 import 'activity_engine.dart';
 import 'player_engine.dart';
+import 'game_state_engine.dart';
 
 class DarevoEngine {
   DarevoEngine._();
@@ -11,6 +12,7 @@ class DarevoEngine {
 
   final ActivityEngine activityEngine = ActivityEngine.instance;
   final PlayerEngine playerEngine = PlayerEngine.instance;
+  final GameStateEngine gameStateEngine = GameStateEngine.instance;
 
   String get version => "0.0.2 Pre-Alpha";
 
@@ -23,8 +25,8 @@ class DarevoEngine {
   bool get hasRoom => _currentRoom != null;
 
   void reset() {
-    _currentRoom = null;
-    activityEngine.clear();
-    playerEngine.clear();
-  }
+  _currentRoom = null;
+  activityEngine.clear();
+  playerEngine.clear();
+  gameStateEngine.reset();
 }
