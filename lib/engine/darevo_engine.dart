@@ -4,6 +4,7 @@ import 'player_engine.dart';
 import 'game_state_engine.dart';
 import 'room_engine.dart';
 import 'game_flow_engine.dart';
+import 'turn_engine.dart';
 
 class DarevoEngine {
   DarevoEngine._();
@@ -18,8 +19,9 @@ class DarevoEngine {
   final RoomEngine roomEngine = RoomEngine.instance;
   final GameFlowEngine gameFlowEngine =
     GameFlowEngine.instance;
+  final TurnEngine turnEngine = TurnEngine.instance;
 
-  String get version => "0.0.6 Pre-Alpha";
+  String get version => "0.0.7 Pre-Alpha";
 
   Room? get currentRoom => _currentRoom;
 
