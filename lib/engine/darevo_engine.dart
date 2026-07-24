@@ -1,9 +1,5 @@
-/// ===========================================================
-/// DAREVO ENGINE
-/// Núcleo principal del juego.
-/// ===========================================================
-
 import '../models/room.dart';
+import 'activity_engine.dart';
 
 class DarevoEngine {
   DarevoEngine._();
@@ -11,6 +7,9 @@ class DarevoEngine {
   static final DarevoEngine instance = DarevoEngine._();
 
   Room? _currentRoom;
+
+  final ActivityEngine activityEngine =
+      ActivityEngine.instance;
 
   String get version => "0.0.1 Pre-Alpha";
 
@@ -24,5 +23,6 @@ class DarevoEngine {
 
   void reset() {
     _currentRoom = null;
+    activityEngine.clear();
   }
 }
