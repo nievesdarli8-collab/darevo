@@ -1,5 +1,6 @@
 import '../data/activity_repository.dart';
 import '../models/activity.dart';
+import '../services/activity_selector.dart';
 
 class ActivityEngine {
   ActivityEngine._();
@@ -10,27 +11,28 @@ class ActivityEngine {
   final ActivityRepository repository =
       ActivityRepository.instance;
 
+  final ActivitySelector selector =
+    const ActivitySelector();
+
   int _currentIndex = 0;
 
-  Activity? nextActivity() {
-    if (repository.activities.isEmpty) {
-      return null;
-    }
+  Activity? nextActivity({int playerCount = 2}) {
+  final available = selector.filterByPlayers(
+    repository.activities,
+    playerCount,
+  );
 
-    final activity =
-        repository.activities[_currentIndex];
-
-    _currentIndex++;
-
-    if (_currentIndex >=
-        repository.activities.length) {
-      _currentIndex = 0;
-    }
-
-    return activity;
+  if (available.isEmpty) {
+    return null;
   }
 
-  void reset() {
+  if (_currentIndex >= available.length) {
     _currentIndex = 0;
   }
+
+  final activity = available[_currentIndex];
+
+  _currentIndex++;
+
+  return activity;
 }
