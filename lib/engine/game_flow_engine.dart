@@ -19,8 +19,9 @@ class GameFlowEngine {
 
   GameTurn? nextTurn() {
     final player = turnEngine.currentPlayer(playerEngine.players);
-    final activity = activityEngine.nextActivity();
-
+    final activity = activityEngine.nextActivity(
+  playerCount: playerEngine.totalPlayers,
+);
     if (player == null || activity == null) {
       return null;
     }
