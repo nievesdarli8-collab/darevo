@@ -73,3 +73,13 @@ Siguiente actividad
 # Regla principal
 
 Ninguna nueva función podrá desarrollarse fuera del DAREVO Engine.
+
+# Sistema de Contenido
+
+El DAREVO Engine nunca contendrá actividades escritas directamente.
+
+Todo el contenido será cargado mediante Content Packs.
+
+El motor únicamente administrará y ejecutará actividades.
+
+Esto permite ampliar el juego sin modificar la arquitectura principal.
