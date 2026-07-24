@@ -16,7 +16,7 @@ class DarevoEngine {
   final GameStateEngine gameStateEngine = GameStateEngine.instance;
 final RoomEngine roomEngine = RoomEngine.instance;
 
-  String get version => "0.0.4 Pre-Alpha";
+  String get version => "0.0.5 Pre-Alpha";
 
   Room? get currentRoom => _currentRoom;
 
@@ -28,7 +28,7 @@ final RoomEngine roomEngine = RoomEngine.instance;
 
   void reset() {
   _currentRoom = null;
-  activityEngine.clear();
+  activityEngine.reset();
   playerEngine.clear();
   roomEngine.clear();
   gameStateEngine.reset();
