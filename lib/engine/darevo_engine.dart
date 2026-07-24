@@ -2,6 +2,7 @@ import '../models/room.dart';
 import 'activity_engine.dart';
 import 'player_engine.dart';
 import 'game_state_engine.dart';
+import 'room_engine.dart';
 
 class DarevoEngine {
   DarevoEngine._();
