@@ -1,0 +1,28 @@
+/// ===========================================================
+/// DAREVO ENGINE
+/// Núcleo principal del juego.
+/// ===========================================================
+
+import '../models/room.dart';
+
+class DarevoEngine {
+  DarevoEngine._();
+
+  static final DarevoEngine instance = DarevoEngine._();
+
+  Room? _currentRoom;
+
+  String get version => "0.0.1 Pre-Alpha";
+
+  Room? get currentRoom => _currentRoom;
+
+  void setRoom(Room room) {
+    _currentRoom = room;
+  }
+
+  bool get hasRoom => _currentRoom != null;
+
+  void reset() {
+    _currentRoom = null;
+  }
+}
