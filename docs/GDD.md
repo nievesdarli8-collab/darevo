@@ -47,3 +47,13 @@ Construir una plataforma escalable basada en el DAREVO Engine, preparada para cr
 # Regla oficial de DAREVO
 
 > Cada decisión de diseño debe hacer que la siguiente partida sea mejor que la anterior.
+
+# Pilar Principal del Juego
+
+El contenido de DAREVO se organiza mediante un sistema de actividades.
+
+Todas las experiencias del juego pertenecen a una categoría oficial.
+
+El motor nunca ejecuta actividades directamente.
+
+Siempre ejecuta objetos Activity que cumplen una estructura estándar.
