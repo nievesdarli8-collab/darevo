@@ -19,7 +19,7 @@ class DarevoEngine {
   final GameFlowEngine gameFlowEngine =
     GameFlowEngine.instance;
 
-  String get version => "0.0.5 Pre-Alpha";
+  String get version => "0.0.6 Pre-Alpha";
 
   Room? get currentRoom => _currentRoom;
 
