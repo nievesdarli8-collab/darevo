@@ -41,11 +41,17 @@ final FunDirector funDirector =
     if (!funDirector.isRepeated(activity)) {
       funDirector.register(activity);
       return activity;
-    }
-  }
+   }
+   }
 
   final activity = available.first;
   funDirector.register(activity);
 
   return activity;
+ }
+
+void reset() {
+  _currentIndex = 0;
+  funDirector.reset();
+}
 }
