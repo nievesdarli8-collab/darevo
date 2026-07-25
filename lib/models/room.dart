@@ -11,6 +11,7 @@ class Room {
   bool started;
 
   Room({
+    required this.state,
     required this.id,
     required this.code,
     List<Player>? players,
