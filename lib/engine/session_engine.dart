@@ -1,17 +1,18 @@
 import '../models/room.dart';
+import '../models/game_session.dart';
 
 class SessionEngine {
-  Room? _currentRoom;
+  GameSession? _currentSession;
 
-  Room? get currentRoom => _currentRoom;
+  GameSession? get currentSession => _currentSession;
 
-  bool get hasSession => _currentRoom != null;
+  bool get hasSession => _currentSession != null;
 
-  void start(Room room) {
-    _currentRoom = room;
-  }
+  void start(GameSession session) {
+  _currentSession = session;
+}
 
   void end() {
-    _currentRoom = null;
-  }
+  _currentSession = null;
+}
 }
