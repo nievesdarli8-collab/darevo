@@ -4,6 +4,7 @@ import 'player.dart';
 class Room {
   final String id;
   final String code;
+  final RoomState state;
 
   final List<Player> players;
 
