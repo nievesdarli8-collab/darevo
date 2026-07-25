@@ -1,3 +1,4 @@
+import 'room_state.dart';
 import 'player.dart';
 
 class Room {
