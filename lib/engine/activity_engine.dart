@@ -1,6 +1,7 @@
 import '../data/activity_repository.dart';
 import '../models/activity.dart';
 import '../services/activity_selector.dart';
+import '../services/fun_director.dart';
 
 class ActivityEngine {
   ActivityEngine._();
