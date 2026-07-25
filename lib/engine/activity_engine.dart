@@ -53,5 +53,5 @@ final FunDirector funDirector =
 void reset() {
   _currentIndex = 0;
   funDirector.reset();
-}
-}
+ }
+ }
