@@ -15,6 +15,9 @@ class ActivityEngine {
   final ActivitySelector selector =
     const ActivitySelector();
 
+final FunDirector funDirector =
+    const FunDirector();
+
   int _currentIndex = 0;
 
   Activity? nextActivity({int playerCount = 2}) {
@@ -27,13 +30,22 @@ class ActivityEngine {
     return null;
   }
 
-  if (_currentIndex >= available.length) {
-    _currentIndex = 0;
+  for (int i = 0; i < available.length; i++) {
+    if (_currentIndex >= available.length) {
+      _currentIndex = 0;
+    }
+
+    final activity = available[_currentIndex];
+    _currentIndex++;
+
+    if (!funDirector.isRepeated(activity)) {
+      funDirector.register(activity);
+      return activity;
+    }
   }
 
-  final activity = available[_currentIndex];
-
-  _currentIndex++;
+  final activity = available.first;
+  funDirector.register(activity);
 
   return activity;
 }
